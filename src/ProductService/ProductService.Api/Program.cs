@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using ProductService.Infrastructure;
+using ProductService.Application.Interfaces;
+using ProductService.Application.Services;
+using ProductService.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ProductContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ProductContext")));
 
+builder.Services.AddScoped<IProductService, ProductService.Application.Services.ProductService>();
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
