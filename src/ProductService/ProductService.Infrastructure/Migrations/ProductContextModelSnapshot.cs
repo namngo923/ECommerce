@@ -22,7 +22,7 @@ namespace ProductService.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ProductService.Domain.Entity.Order", b =>
+            modelBuilder.Entity("ProductService.Domain.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -42,7 +42,7 @@ namespace ProductService.Infrastructure.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("ProductService.Domain.Entity.OrderItem", b =>
+            modelBuilder.Entity("ProductService.Domain.Entities.OrderItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -60,6 +60,7 @@ namespace ProductService.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("UnitPrice")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -69,7 +70,7 @@ namespace ProductService.Infrastructure.Migrations
                     b.ToTable("OrderItem");
                 });
 
-            modelBuilder.Entity("ProductService.Domain.Entity.Product", b =>
+            modelBuilder.Entity("ProductService.Domain.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -86,6 +87,7 @@ namespace ProductService.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Stock")
@@ -96,14 +98,14 @@ namespace ProductService.Infrastructure.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("ProductService.Domain.Entity.OrderItem", b =>
+            modelBuilder.Entity("ProductService.Domain.Entities.OrderItem", b =>
                 {
-                    b.HasOne("ProductService.Domain.Entity.Order", null)
+                    b.HasOne("ProductService.Domain.Entities.Order", null)
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId");
                 });
 
-            modelBuilder.Entity("ProductService.Domain.Entity.Order", b =>
+            modelBuilder.Entity("ProductService.Domain.Entities.Order", b =>
                 {
                     b.Navigation("OrderItems");
                 });

@@ -1,9 +1,7 @@
-﻿using ProductService.Application.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductService.Application.Interfaces;
 using ProductService.Domain.Entities;
 using ProductService.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ProductService.Application.Services
 {

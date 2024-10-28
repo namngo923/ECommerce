@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProductService.Application.Interfaces;
 using ProductService.Domain.Entities;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ProductService.Api.Controllers
 {
