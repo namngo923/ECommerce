@@ -28,4 +28,3 @@ public class ProductContext : DbContext
             .HasPrecision(18, 2); // Adjust based on your requirement
     }
 }
-

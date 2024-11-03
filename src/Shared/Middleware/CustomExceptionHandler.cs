@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SPSVN.Shared.Constants;
-using SPSVN.Shared.Exceptions;
-using SPSVN.Shared.Models;
+using Shared.Exceptions;
 
-namespace SPSVN.Shared.Middleware;
+namespace Shared.Middleware;
 
 public class CustomExceptionHandler : IExceptionHandler
 {
@@ -13,7 +11,7 @@ public class CustomExceptionHandler : IExceptionHandler
     {
         { typeof(UnauthorizedAccessException), HandleUnauthorizedAccessException },
         { typeof(ValidationException), HandleValidationException },
-        { typeof(SpServerException), HandleSpServerException}
+        { typeof(SpServerException), HandleSpServerException }
     };
 
     public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception,
@@ -22,13 +20,9 @@ public class CustomExceptionHandler : IExceptionHandler
         var exceptionType = exception.GetType();
 
         if (!_exceptionHandlers.TryGetValue(exceptionType, out var handler))
-        {
             await HandleServerException(httpContext, exception);
-        }
         else
-        {
             await handler.Invoke(httpContext, exception);
-        }
 
         return true;
     }
@@ -38,7 +32,7 @@ public class CustomExceptionHandler : IExceptionHandler
     {
         httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
 
-        await httpContext.Response.WriteAsJsonAsync(new ProblemDetails()
+        await httpContext.Response.WriteAsJsonAsync(new ProblemDetails
         {
             Status = StatusCodes.Status500InternalServerError,
             Title = "Internal Server Error - An unhandled error occurred",
@@ -62,23 +56,14 @@ public class CustomExceptionHandler : IExceptionHandler
     private static async Task HandleSpServerException(HttpContext httpContext, Exception ex)
     {
         var spServerException = (SpServerException)ex;
-        var serverError = new SharepointServerErrorCodeModel(spServerException);
-
         var title = "Internal Server Error";
         var status = StatusCodes.Status500InternalServerError;
         var message = ex.Message;
         var type = "https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.1";
 
-        if (serverError == SharepointServerErrors.NotFound)
-        {
-            title = "Not Found";
-            status = StatusCodes.Status404NotFound;
-            type = "https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.4";
-        }
-
         httpContext.Response.StatusCode = status;
 
-        await httpContext.Response.WriteAsJsonAsync(new ProblemDetails()
+        await httpContext.Response.WriteAsJsonAsync(new ProblemDetails
         {
             Status = status,
             Title = title,

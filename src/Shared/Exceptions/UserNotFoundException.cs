@@ -1,4 +1,4 @@
-﻿namespace SPSVN.Shared.Exceptions;
+﻿namespace Shared.Exceptions;
 
 public class UserNotFoundException : Exception
 {

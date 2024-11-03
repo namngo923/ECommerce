@@ -1,6 +1,7 @@
 namespace Core.Mongo.Attributes;
 
-public class BsonCollectionAttribute
+[AttributeUsage(AttributeTargets.Class, Inherited = false)]
+public class BsonCollectionAttribute(string collectionName) : Attribute
 {
-    
+    public string CollectionName { get; } = collectionName;
 }

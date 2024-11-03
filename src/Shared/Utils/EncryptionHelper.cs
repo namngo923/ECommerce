@@ -1,19 +1,21 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace SPSVN.Shared.Utils;
+namespace Shared.Utils;
 
 public static class EncryptionHelper
 {
     public const string LicenseSP365 = "SpSRc365b#p@$cVietNam";
 
     private const string EncryptionKey = "SpSRcb#p@$cVietNam";
+
     [Obsolete("Obsolete")]
     public static string Encrypt(string clearText)
     {
         var clearBytes = Encoding.Unicode.GetBytes(clearText);
         using var encryptor = Aes.Create();
-        var pdb = new Rfc2898DeriveBytes(EncryptionKey, [0x86, 0x68, 0x89, 0x6e, 0x98, 0x4d, 0x86, 0x68, 0x96, 0x89, 0x86, 0x68, 0x86]);
+        var pdb = new Rfc2898DeriveBytes(EncryptionKey,
+            [0x86, 0x68, 0x89, 0x6e, 0x98, 0x4d, 0x86, 0x68, 0x96, 0x89, 0x86, 0x68, 0x86]);
         encryptor.Key = pdb.GetBytes(32);
         encryptor.IV = pdb.GetBytes(16);
         encryptor.Mode = CipherMode.CBC;
@@ -26,6 +28,7 @@ public static class EncryptionHelper
             cs.Write(clearBytes, 0, clearBytes.Length);
             cs.Close();
         }
+
         clearText = Convert.ToBase64String(ms.ToArray());
 
         return clearText;
@@ -37,7 +40,8 @@ public static class EncryptionHelper
         cipherText = cipherText.Replace(" ", "+");
         var cipherBytes = Convert.FromBase64String(cipherText);
         using var encryptor = Aes.Create();
-        var pdb = new Rfc2898DeriveBytes(EncryptionKey, [0x86, 0x68, 0x89, 0x6e, 0x98, 0x4d, 0x86, 0x68, 0x96, 0x89, 0x86, 0x68, 0x86]);
+        var pdb = new Rfc2898DeriveBytes(EncryptionKey,
+            [0x86, 0x68, 0x89, 0x6e, 0x98, 0x4d, 0x86, 0x68, 0x96, 0x89, 0x86, 0x68, 0x86]);
         encryptor.Key = pdb.GetBytes(32);
         encryptor.IV = pdb.GetBytes(16);
         using var ms = new MemoryStream();
@@ -46,6 +50,7 @@ public static class EncryptionHelper
             cs.Write(cipherBytes, 0, cipherBytes.Length);
             cs.Close();
         }
+
         cipherText = Encoding.Unicode.GetString(ms.ToArray());
 
         return cipherText;
@@ -54,11 +59,11 @@ public static class EncryptionHelper
     [Obsolete("Obsolete")]
     public static string Decrypt(string cipherText, string key)
     {
-
         cipherText = cipherText.Replace(" ", "+");
         var cipherBytes = Convert.FromBase64String(cipherText);
         using var encryptor = Aes.Create();
-        var pdb = new Rfc2898DeriveBytes(key, [0x86, 0x68, 0x89, 0x6e, 0x98, 0x4d, 0x86, 0x68, 0x96, 0x89, 0x86, 0x68, 0x86]);
+        var pdb = new Rfc2898DeriveBytes(key,
+            [0x86, 0x68, 0x89, 0x6e, 0x98, 0x4d, 0x86, 0x68, 0x96, 0x89, 0x86, 0x68, 0x86]);
         encryptor.Key = pdb.GetBytes(32);
         encryptor.IV = pdb.GetBytes(16);
         using var ms = new MemoryStream();
@@ -67,6 +72,7 @@ public static class EncryptionHelper
             cs.Write(cipherBytes, 0, cipherBytes.Length);
             cs.Close();
         }
+
         cipherText = Encoding.Unicode.GetString(ms.ToArray());
 
         return cipherText;
@@ -77,7 +83,8 @@ public static class EncryptionHelper
     {
         var clearBytes = Encoding.Unicode.GetBytes(clearText);
         using var encryptor = Aes.Create();
-        var pdb = new Rfc2898DeriveBytes(key, [0x86, 0x68, 0x89, 0x6e, 0x98, 0x4d, 0x86, 0x68, 0x96, 0x89, 0x86, 0x68, 0x86]);
+        var pdb = new Rfc2898DeriveBytes(key,
+            [0x86, 0x68, 0x89, 0x6e, 0x98, 0x4d, 0x86, 0x68, 0x96, 0x89, 0x86, 0x68, 0x86]);
         encryptor.Key = pdb.GetBytes(32);
         encryptor.IV = pdb.GetBytes(16);
         encryptor.Mode = CipherMode.CBC;
@@ -89,6 +96,7 @@ public static class EncryptionHelper
             cs.Write(clearBytes, 0, clearBytes.Length);
             cs.Close();
         }
+
         clearText = Convert.ToBase64String(ms.ToArray());
 
         return clearText;

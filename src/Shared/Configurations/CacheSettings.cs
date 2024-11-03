@@ -1,6 +1,6 @@
-﻿using SPSVN.Shared.Constants;
+﻿using Shared.Constants;
 
-namespace SPSVN.Shared.Configurations;
+namespace Shared.Configurations;
 
 public class CacheSettings
 {

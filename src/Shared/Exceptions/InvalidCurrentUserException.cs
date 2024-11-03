@@ -1,13 +1,12 @@
-﻿namespace SPSVN.Shared.Exceptions;
+﻿namespace Shared.Exceptions;
 
 public class InvalidCurrentUserException : Exception
 {
-    public InvalidCurrentUserException() : base()
+    public InvalidCurrentUserException()
     {
     }
 
     public InvalidCurrentUserException(string message) : base(message)
     {
-
     }
 }

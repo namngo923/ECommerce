@@ -1,4 +1,4 @@
-﻿namespace SPSVN.Shared.Configurations;
+﻿namespace Shared.Configurations;
 
 public class AppSystem
 {

@@ -1,4 +1,4 @@
-﻿namespace SPSVN.Shared.Constants;
+﻿namespace Shared.Constants;
 
 public static class CacheType
 {

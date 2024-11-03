@@ -1,6 +1,6 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 
-namespace SPSVN.Shared.Utils;
+namespace Shared.Utils;
 
 public static class TokenHelper
 {

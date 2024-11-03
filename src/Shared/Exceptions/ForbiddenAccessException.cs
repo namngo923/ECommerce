@@ -1,8 +1,5 @@
-﻿namespace SPSVN.Shared.Exceptions;
+﻿namespace Shared.Exceptions;
 
 public class ForbiddenAccessException : Exception
 {
-    public ForbiddenAccessException() : base()
-    {
-    }
 }

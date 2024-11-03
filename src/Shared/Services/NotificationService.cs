@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace SPSVN.Shared.Services;
+namespace Shared.Services;
 
 public interface INotificationService
 {

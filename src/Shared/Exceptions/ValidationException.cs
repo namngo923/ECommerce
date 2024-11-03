@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace SPSVN.Shared.Exceptions;
+namespace Shared.Exceptions;
 
 public class ValidationException() : Exception("One or more validation failures have occurred.")
 {

@@ -1,30 +1,18 @@
-﻿using SPSVN.Shared.Exceptions;
+﻿namespace Shared.Models;
 
-namespace SPSVN.Shared.Models;
 public class SharepointServerErrorCodeModel
 {
     public int HResult { get; set; }
     public int ServerErrorCode { get; set; }
     public string Message { get; set; } = string.Empty;
 
-    public SharepointServerErrorCodeModel()
-    {
-    }
-
-    public SharepointServerErrorCodeModel(SpServerException exception)
-    {
-        HResult = exception.HResult;
-        ServerErrorCode = exception.ServerErrorCode;
-        Message = exception.Message;
-    }
-
     public override bool Equals(object? obj)
     {
-        if (obj == null || obj.GetType() != this.GetType())
+        if (obj == null || obj.GetType() != GetType())
             return false;
 
         var other = (SharepointServerErrorCodeModel)obj;
-        return this.HResult == other.HResult && this.ServerErrorCode == other.ServerErrorCode;
+        return HResult == other.HResult && ServerErrorCode == other.ServerErrorCode;
     }
 
     public static bool operator ==(SharepointServerErrorCodeModel o1, SharepointServerErrorCodeModel o2)

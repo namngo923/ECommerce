@@ -1,4 +1,4 @@
-﻿namespace SPSVN.Shared.Models;
+﻿namespace Shared.Models;
 
 public class FileItem
 {

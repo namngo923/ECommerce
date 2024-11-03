@@ -1355,11 +1355,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\SPSVN.O365\\src\\Shared\\SPSVN.Shared\\SPSVN.Shared.csproj",
-      "projectName": "SPSVN.Shared",
-      "projectPath": "D:\\Code\\SPSVN.O365\\src\\Shared\\SPSVN.Shared\\SPSVN.Shared.csproj",
+      "projectUniqueName": "D:\\GIT\\Ecomerce\\ECommerce\\src\\Shared\\Shared.csproj",
+      "projectName": "Shared",
+      "projectPath": "D:\\GIT\\Ecomerce\\ECommerce\\src\\Shared\\Shared.csproj",
       "packagesPath": "C:\\Users\\namng\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\SPSVN.O365\\src\\Shared\\SPSVN.Shared\\obj\\",
+      "outputPath": "D:\\GIT\\Ecomerce\\ECommerce\\src\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\namng\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1383,6 +1383,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {

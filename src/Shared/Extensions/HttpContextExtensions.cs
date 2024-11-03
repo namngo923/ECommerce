@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace SPSVN.Shared.Extensions;
+namespace Shared.Extensions;
 
 public static class HttpContextExtensions
 {

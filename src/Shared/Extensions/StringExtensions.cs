@@ -1,7 +1,7 @@
 ﻿using System.Security;
 using System.Text;
 
-namespace SPSVN.Shared.Extensions;
+namespace Shared.Extensions;
 
 public static class StringExtensions
 {
@@ -19,7 +19,9 @@ public static class StringExtensions
 
     public static Guid ToGuid(this string input)
     {
-        return !input.IsGuid() ? throw new ArgumentException("The given string must be parsable to a Guid.") : Guid.Parse(input);
+        return !input.IsGuid()
+            ? throw new ArgumentException("The given string must be parsable to a Guid.")
+            : Guid.Parse(input);
     }
 
     public static bool IsEmpty(this string input)
@@ -46,13 +48,9 @@ public static class StringExtensions
     public static string RemoveSpecialCharacters(this string str)
     {
         var sb = new StringBuilder();
-        foreach (char c in str)
-        {
+        foreach (var c in str)
             if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_')
-            {
                 sb.Append(c);
-            }
-        }
         return sb.ToString();
     }
 }

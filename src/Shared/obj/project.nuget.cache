@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qFKKvLGZQqT/OeViUJgT5UpHLFYC+0PbGQfUlurYHbuWSeO/muLNczNylxIA6/E/8Y8G/CucitW9RIdyQwariA==",
+  "dgSpecHash": "3EU+V3zoAYk=",
   "success": true,
-  "projectFilePath": "D:\\Code\\SPSVN.O365\\src\\Shared\\SPSVN.Shared\\SPSVN.Shared.csproj",
+  "projectFilePath": "D:\\GIT\\Ecomerce\\ECommerce\\src\\Shared\\Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\namng\\.nuget\\packages\\ardalis.guardclauses\\5.0.0\\ardalis.guardclauses.5.0.0.nupkg.sha512",
     "C:\\Users\\namng\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512",

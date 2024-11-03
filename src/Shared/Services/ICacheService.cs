@@ -1,4 +1,4 @@
-﻿namespace SPSVN.Shared.Services;
+﻿namespace Shared.Services;
 
 public interface ICacheService
 {

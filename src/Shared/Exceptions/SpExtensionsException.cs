@@ -1,4 +1,4 @@
-﻿namespace SPSVN.Shared.Exceptions;
+﻿namespace Exceptions;
 
 public class SpExtensionsException(string message) : Exception(message)
 {
