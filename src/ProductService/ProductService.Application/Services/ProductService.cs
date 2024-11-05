@@ -1,57 +1,55 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProductService.Application.DTOs;
 using ProductService.Application.Interfaces;
 using ProductService.Domain.Entities;
-using ProductService.Infrastructure.Data;
+using ProductService.Domain.Interface;
 
 namespace ProductService.Application.Services;
 
 public class ProductService : IProductService
 {
-    private readonly ProductContext _context;
+    private readonly IProductRepository _productRepository;
 
-    public ProductService(ProductContext context)
+    public ProductService(IProductRepository productRepository)
     {
-        _context = context;
+        _productRepository = productRepository;
     }
 
-    public async Task<IEnumerable<Product>> GetAllProductsAsync()
+    public async Task<ProductDto?> GetProductByIdAsync(string id)
     {
-        return await _context.Products.ToListAsync();
+        var product = await _productRepository.GetProductByIdAsync(id);
+        return product == null ? null : new ProductDto
+        {
+            Id = product.MongoObjectId.ToString(),
+            Name = product.Name,
+            Description = product.Description,
+            Price = product.Price,
+            StockQuantity = product.StockQuantity
+        };
     }
 
-    public async Task<Product> GetProductByIdAsync(int id)
+    public async Task CreateProductAsync(ProductDto productDto)
     {
-        return await _context.Products.FindAsync(id);
+        var product = new Product
+        {
+            Name = productDto.Name,
+            Description = productDto.Description,
+            Price = productDto.Price,
+            StockQuantity = productDto.StockQuantity
+        };
+
+        await _productRepository.AddProductAsync(product);
     }
 
-    public async Task<Product> CreateProductAsync(Product product)
+    public async Task<IEnumerable<Product>> GetAllProductsAsync() => await _productRepository.GetAllProductsAsync();
+
+    public Task UpdateProductAsync(ProductDto productDto)
     {
-        _context.Products.Add(product);
-        await _context.SaveChangesAsync();
-        return product;
+        throw new NotImplementedException();
     }
 
-    public async Task<Product> UpdateProductAsync(int id, Product product)
+    public Task DeleteProductAsync(string id)
     {
-        var existingProduct = await _context.Products.FindAsync(id);
-        if (existingProduct == null) return null;
-
-        existingProduct.Name = product.Name;
-        existingProduct.Description = product.Description;
-        existingProduct.Price = product.Price;
-        existingProduct.Stock = product.Stock;
-
-        await _context.SaveChangesAsync();
-        return existingProduct;
-    }
-
-    public async Task<bool> DeleteProductAsync(int id)
-    {
-        var product = await _context.Products.FindAsync(id);
-        if (product == null) return false;
-
-        _context.Products.Remove(product);
-        await _context.SaveChangesAsync();
-        return true;
+        throw new NotImplementedException();
     }
 }

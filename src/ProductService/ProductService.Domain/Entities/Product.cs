@@ -1,10 +1,17 @@
-﻿namespace ProductService.Domain.Entities;
+﻿using Core.Mongo.Models;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
-public class Product
+namespace ProductService.Domain.Entities;
+
+public class Product : IBaseMongoEntity
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public decimal Price { get; set; }
-    public int Stock { get; set; }
+    [BsonId]
+    [BsonRepresentation(BsonType.String)]
+    public ObjectId MongoObjectId { get; set ; }
+    public string Name { get; set; } = default!;
+    public string Description { get; set; } = default!;
+    public double Price { get; set; }
+    public string Category { get; set; } = default!;
+    public int StockQuantity { get; set; }
 }
