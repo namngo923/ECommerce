@@ -1908,19 +1908,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\namng\\.nuget\\packages\\": {}
+    "C:\\Users\\namng\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GIT\\Ecomerce\\ECommerce\\src\\ProductService\\ProductService.Domain\\ProductService.Domain.csproj",
+      "projectUniqueName": "D:\\PersonalProject\\ECommerce\\src\\ProductService\\ProductService.Domain\\ProductService.Domain.csproj",
       "projectName": "ProductService.Domain",
-      "projectPath": "D:\\GIT\\Ecomerce\\ECommerce\\src\\ProductService\\ProductService.Domain\\ProductService.Domain.csproj",
+      "projectPath": "D:\\PersonalProject\\ECommerce\\src\\ProductService\\ProductService.Domain\\ProductService.Domain.csproj",
       "packagesPath": "C:\\Users\\namng\\.nuget\\packages\\",
-      "outputPath": "D:\\GIT\\Ecomerce\\ECommerce\\src\\ProductService\\ProductService.Domain\\obj\\",
+      "outputPath": "D:\\PersonalProject\\ECommerce\\src\\ProductService\\ProductService.Domain\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\namng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1935,8 +1940,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\GIT\\Ecomerce\\ECommerce\\src\\Core.Mongo\\Core.Mongo.csproj": {
-              "projectPath": "D:\\GIT\\Ecomerce\\ECommerce\\src\\Core.Mongo\\Core.Mongo.csproj"
+            "D:\\PersonalProject\\ECommerce\\src\\Core.Mongo\\Core.Mongo.csproj": {
+              "projectPath": "D:\\PersonalProject\\ECommerce\\src\\Core.Mongo\\Core.Mongo.csproj"
             }
           }
         }
@@ -1971,7 +1976,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

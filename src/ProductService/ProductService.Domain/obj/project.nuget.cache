@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9pRgQeJhM6g=",
+  "dgSpecHash": "NxZnk6mQ/qM=",
   "success": true,
-  "projectFilePath": "D:\\GIT\\Ecomerce\\ECommerce\\src\\ProductService\\ProductService.Domain\\ProductService.Domain.csproj",
+  "projectFilePath": "D:\\PersonalProject\\ECommerce\\src\\ProductService\\ProductService.Domain\\ProductService.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\namng\\.nuget\\packages\\ardalis.guardclauses\\5.0.0\\ardalis.guardclauses.5.0.0.nupkg.sha512",
     "C:\\Users\\namng\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",

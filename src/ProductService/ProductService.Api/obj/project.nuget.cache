@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Qv/k9KtuJao=",
+  "dgSpecHash": "0/VpqiMkB2w=",
   "success": true,
-  "projectFilePath": "D:\\GIT\\Ecomerce\\ECommerce\\src\\ProductService\\ProductService.Api\\ProductService.Api.csproj",
+  "projectFilePath": "D:\\PersonalProject\\ECommerce\\src\\ProductService\\ProductService.Api\\ProductService.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\namng\\.nuget\\packages\\ardalis.guardclauses\\5.0.0\\ardalis.guardclauses.5.0.0.nupkg.sha512",
     "C:\\Users\\namng\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

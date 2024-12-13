@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7azi7Dr+J3g=",
+  "dgSpecHash": "RC87koW0ghI=",
   "success": true,
-  "projectFilePath": "D:\\GIT\\Ecomerce\\ECommerce\\src\\Core.Mongo\\Core.Mongo.csproj",
+  "projectFilePath": "D:\\PersonalProject\\ECommerce\\src\\Core.Mongo\\Core.Mongo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\namng\\.nuget\\packages\\ardalis.guardclauses\\5.0.0\\ardalis.guardclauses.5.0.0.nupkg.sha512",
     "C:\\Users\\namng\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
